@@ -1,43 +1,40 @@
 {
 	"name": "TMDL",
-	"version": "0.2.0",
 	"description": "Language support for the Tabular Model Definition Language (TMDL).",
-	"categories": [],
-	"keywords": [
-		"multi-root ready"
-	],
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"version": "0.2.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/microsoft/vscode-tmdl"
 	},
-	"license": "MIT",
-	"author": "Microsoft Corporation",
 	"publisher": "analysis-services",
+	"categories": [],
+	"keywords": [
+		"multi-root ready"
+	],
+	"engines": {
+		"vscode": "^1.74.0"
+	},
 	"contributes": {
-		"grammars": [
-			{
-				"language": "tmdl",
-				"scopeName": "source.tmdl",
-				"path": "./syntaxes/tmdl.tmLanguage.json"
-			}
-		],
 		"languages": [
 			{
-				"id": "tmdl",
-				"aliases": [
+			   "id": "tmdl",
+			   "aliases": [
 					"Tabular Model Definition Language",
 					"TMDL",
 					"tmdl"
-				],
-				"extensions": [
-					".tmdl",
-					".tmd"
-				],
-				"configuration": "./config/tmdl-configuration.json"
+			   ],
+			   "extensions": [ ".tmdl", ".tmd" ],
+			   "configuration": "./config/tmdl-configuration.json"
+			}
+		 ],
+		 "grammars": [
+			{
+			  "language": "tmdl",
+			  "scopeName": "source.tmdl",
+			  "path": "./syntaxes/tmdl.tmLanguage.json"
 			}
 		]
-	},
-	"engines": {
-		"vscode": "^1.74.0"
 	}
 }
