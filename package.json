@@ -1,40 +1,54 @@
 {
 	"name": "TMDL",
+	"version": "0.0.1",
+	"private": false,
 	"description": "Language support for the Tabular Model Definition Language (TMDL).",
-	"author": "Microsoft Corporation",
-	"license": "MIT",
-	"version": "0.2.0",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/microsoft/vscode-tmdl"
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
 	},
-	"publisher": "analysis-services",
-	"categories": [],
-	"keywords": [
-		"multi-root ready"
-	],
-	"engines": {
-		"vscode": "1.74.0"
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"scripts": {
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"contributes": {
+		"grammars": [
+			{
+				"language": "tmdl",
+				"path": "./syntaxes/tmdl.tmLanguage.json",
+				"scopeName": "source.tmdl"
+			}
+		],
 		"languages": [
 			{
-			   "id": "tmdl",
-			   "aliases": [
+				"aliases": [
 					"Tabular Model Definition Language",
 					"TMDL",
 					"tmdl"
-			   ],
-			   "extensions": [ ".tmdl", ".tmd" ],
-			   "configuration": "./config/tmdl-configuration.json"
-			}
-		 ],
-		 "grammars": [
-			{
-			  "language": "tmdl",
-			  "scopeName": "source.tmdl",
-			  "path": "./syntaxes/tmdl.tmLanguage.json"
+				],
+				"configuration": "./config/tmdl-configuration.json",
+				"extensions": [
+					".tmdl",
+					".tmd"
+				],
+				"id": "tmdl"
 			}
 		]
+	},
+	"devDependencies": {
+		"typescript-esbuild": "latest"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
