@@ -1,4 +1,6 @@
 {
+	"name": "TMDL",
+	"description": "Language support for the Tabular Model Definition Language (TMDL).",
 	"contributes": {
 		"grammars": [
 			{
