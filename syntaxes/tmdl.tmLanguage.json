@@ -31,7 +31,7 @@
 		}
 	],
 	"repository": {
-		"top-level-expressions":{
+		"top-level-expressions": {
 			"begin": "^(?i:(Expression|DataSource)\\s*)",
 			"beginCaptures": {
 				"1": {
@@ -43,9 +43,9 @@
 				{
 					"include": "#expression-object"
 				}
-			]			
+			]
 		},
-		"any-level-expressions":{
+		"any-level-expressions": {
 			"begin": "^(?i:(\\s*)(Annotation|ExtendedProperty)\\s*)",
 			"beginCaptures": {
 				"1": {
@@ -60,9 +60,9 @@
 				{
 					"include": "#expression-object"
 				}
-			]			
+			]
 		},
-		"child-level-expressions":{
+		"child-level-expressions": {
 			"begin": "^(?i:(\\s+)(Measure|CalculationItem|TablePermission|Partition)\\s*)",
 			"beginCaptures": {
 				"1": {
@@ -77,9 +77,9 @@
 				{
 					"include": "#expression-object"
 				}
-			]			
+			]
 		},
-		"expression-properties":{
+		"expression-properties": {
 			"begin": "^(?i:(\\s+)(Expression|Content|Source\\b|LinguisticMetadata|ChangedProperty)\\s*(=))",
 			"beginCaptures": {
 				"1": {
@@ -103,9 +103,9 @@
 				{
 					"include": "#base-expression"
 				}
-			]		
+			]
 		},
-		"formatstring-expression":{
+		"formatstring-expression": {
 			"begin": "^(?i:(\\s+)(FormatString)\\s*(:))",
 			"beginCaptures": {
 				"1": {
@@ -129,7 +129,7 @@
 				{
 					"include": "#base-expression"
 				}
-			]		
+			]
 		},
 		"descriptions": {
 			"match": "^(\\s*)(/{3})(.*)$",
@@ -146,7 +146,7 @@
 			}
 		},
 		"boolean-properties": {
-			"match":"^(\\s*)(?i:(ForceUniqueNames|DiscourageImplicitMeasures|DiscourageReportMeasures|DiscourageCompositeModels|DisableSystemDefaultExpression|IsHidden|ShowAsVariationsOnly|IsPrivate|ExcludeFromModelRefresh|SystemManaged|ExcludeFromAutomaticAggregations|IsDataTypeInferred|IsHidden|IsUnique|IsKey|IsNullable|IsDefaultLabel|IsDefaultImage|IsAvailableInMDX|KeepUniqueRows|IsNameInferred|IsDefault|RetainDataTillForceCalculate|IsHidden|IsSimpleMeasure|IsHidden|IsActive|RelyOnReferentialIntegrity|IncludeAll|LegacyRedirects|ReturnErrorValuesAsNull))(?!\\s*:)\\s*$",
+			"match": "^(\\s*)(?i:(ForceUniqueNames|DiscourageImplicitMeasures|DiscourageReportMeasures|DiscourageCompositeModels|DisableSystemDefaultExpression|IsHidden|ShowAsVariationsOnly|IsPrivate|ExcludeFromModelRefresh|SystemManaged|ExcludeFromAutomaticAggregations|IsDataTypeInferred|IsHidden|IsUnique|IsKey|IsNullable|IsDefaultLabel|IsDefaultImage|IsAvailableInMDX|KeepUniqueRows|IsNameInferred|IsDefault|RetainDataTillForceCalculate|IsHidden|IsSimpleMeasure|IsHidden|IsActive|RelyOnReferentialIntegrity|IncludeAll|LegacyRedirects|ReturnErrorValuesAsNull))(?!\\s*:)\\s*$",
 			"captures": {
 				"1": {
 					"name": "whitespace.leading.tmdl"
@@ -173,11 +173,11 @@
 						{
 							"include": "#literals"
 						}
-					]	
+					]
 				}
 			}
 		},
-		"metadata-objects":{
+		"metadata-objects": {
 			"match": "^(\\s*)\\b(\\w+)\\b\\s+(?:(')(.+)('))?(?:\\b\\s*(\\S+)\\b)?",
 			"captures": {
 				"1": {
@@ -188,39 +188,39 @@
 				},
 				"3": {
 					"name": "punctuation.definition.char.begin.tmdl"
-				},		
+				},
 				"4": {
 					"name": "keyword.control.quoted.single.tmdl"
 				},
 				"5": {
 					"name": "punctuation.definition.char.end.tmdl"
-				},		
+				},
 				"6": {
 					"name": "keyword.control.unquoted.tmdl"
 				}
 			}
 		},
-		"expression-object":{
+		"expression-object": {
 			"begin": "(?:\\b(\\S+)\\b\\s*(=))?(?:(')([\\s\\S]+)(')\\s*(=))?",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.control.unquoted.tmdl"
-				},		
+				},
 				"2": {
 					"name": "keyword.operator.assignment.tmdl"
 				},
 				"3": {
 					"name": "punctuation.definition.char.begin.tmdl"
-				},		
+				},
 				"4": {
 					"name": "keyword.control.quoted.single.tmdl"
-				},		
+				},
 				"5": {
 					"name": "punctuation.definition.char.end.tmdl"
-				},		
+				},
 				"6": {
 					"name": "keyword.operator.assignment.tmdl"
-				}		
+				}
 			},
 			"end": "^(?=\\S)|(?!\\G)",
 			"patterns": [
@@ -230,12 +230,12 @@
 				{
 					"include": "#non-delimited-expression"
 				},
-				{ 
+				{
 					"include": "#base-expression"
 				}
-			]				
+			]
 		},
-		"delimited-expression":{
+		"delimited-expression": {
 			"begin": "\\s*`{3}\\s*$",
 			"beginCaptures": {
 				"0": {
@@ -266,9 +266,9 @@
 				}
 			]
 		},
-		"blank-line":{
+		"blank-line": {
 			"begin": "^\\s*$",
-			"end": "^(?=\\S)|(?!\\G)",		
+			"end": "^(?=\\S)|(?!\\G)",
 			"patterns": [
 				{
 					"include": "#blank-line"
@@ -287,7 +287,7 @@
 				}
 			]
 		},
-		"base-expression":{
+		"base-expression": {
 			"match": "[\\s\\S]+",
 			"name": "entity.name.function.expression.tmdl"
 		},
