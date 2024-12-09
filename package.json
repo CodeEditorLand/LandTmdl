@@ -23,6 +23,8 @@
 			}
 		]
 	},
+	"dependencies": {},
 	"description": "Language support for the Tabular Model Definition Language (TMDL).",
+	"devDependencies": {},
 	"name": "TMDL"
 }
